@@ -1,0 +1,12 @@
+.mdc-card {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @media (max-width: 650px) {
+        height: 110px;
+    }
+    @media (max-width:450px) {
+        height: 150px;
+    }
+}

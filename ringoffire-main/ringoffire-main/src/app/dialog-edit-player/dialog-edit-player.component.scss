@@ -1,0 +1,19 @@
+.dialogImg {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid rgb(0, 0, 0, 0.5);
+    margin-left: 3px;
+    padding: 1px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+.editDialog {
+    padding: 10px;
+}

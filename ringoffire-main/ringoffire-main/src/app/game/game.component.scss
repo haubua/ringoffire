@@ -1,0 +1,254 @@
+.field {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-image: url(../../assets/img/wooden.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 850px) {
+        justify-content: end;
+    }
+}
+
+
+.card-stack {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 850px) {
+        margin-right: 75px;
+    }
+    @media (max-width: 550px) {
+        margin-right: 15px;
+    }
+
+    img {
+        height: 250px;
+        width: auto;
+        position: absolute;
+
+        @media (max-width: 550px) {
+            height: 200px;
+        }
+    }
+}
+
+.top-card {
+    transition: all 125ms ease-in-out;
+
+    &:hover {
+        transform: translateX(-10px);
+        cursor: pointer;
+    }
+}
+
+.played-cards {
+    right: 25px;
+    @media (min-width: 850px) {
+        transform: translateX(215px) translateY(-167px) rotate(-5deg);
+    }
+    @media (max-width: 850px) {
+        transform: translateX(-240px) translateY(-167px) rotate(-5deg); //ANPASSEN 1
+    }
+    @media (max-width: 550px) {
+        right: 110px;
+        transform: translateX(40px) translateY(-167px) rotate(-5deg);
+    }
+}
+
+.pick-card {
+    animation: pick-card-animation 1.15s ease-in-out;
+    transform: translateX(400px) translateY(-300px) rotate(-5deg);
+
+    @media (max-width: 850px) { //ANPASSEN
+        animation: pick-card-animation-mobile850 1.15s ease-in-out;
+        transform: translateX(90px) translateY(-300px) rotate(-5deg);
+    }
+    @media (max-width: 550px) {
+        animation: pick-card-animation-mobile350 1.15s ease-in-out;
+        transform: translateX(90px) translateY(-300px) rotate(-5deg);
+    }
+}
+
+@keyframes pick-card-animation {
+    0% {
+        transform: scale(1) translateX(210px) scaleX(0);
+    }
+
+    30% {
+        transform: scale(1.5);
+    }
+
+    60% {
+        transform: scale(1.5) scaleX(1);
+        ;
+    }
+
+    100% {
+        transform: scale(1) translateX(400px) translateY(-300px) rotate(-5deg);
+    }
+}
+
+@keyframes pick-card-animation-mobile350 {
+    0% {
+        transform: scale(1) translateX(90px) scaleX(0);
+    }
+
+    30% {
+        transform: scale(1.2);
+    }
+
+    60% {
+        transform: scale(1.2) scaleX(1);
+        ;
+    }
+
+    100% {
+        transform: scale(1) translateX(20px) translateY(-275px) rotate(-5deg);
+    }
+}
+
+@keyframes pick-card-animation-mobile850 {
+    0% {
+        transform: scale(1) translateX(90px) scaleX(0);
+    }
+
+    30% {
+        transform: scale(1.2);
+    }
+
+    60% {
+        transform: scale(1.2) scaleX(1);
+        ;
+    }
+
+    100% {
+        transform: scale(1) translateX(-55px) translateY(-300px) rotate(-5deg);
+    }
+}
+
+.avater-position {
+    position: absolute;
+    right: 0;
+
+    @media (max-width: 1100px) {
+        width: 90px;
+        position: unset;
+        margin-left: 10px;
+    }
+}
+
+.btn-add {
+    position: absolute;
+    right: 32px;
+    bottom: 96px;
+    background-color: greenyellow;
+     
+    @media (max-width: 650px) {
+        bottom: 120px;
+    }
+    @media (max-width: 450px) {
+        bottom: 165px;
+    }
+}
+
+.info-box {
+    position: absolute;
+    left: 200px;
+    right: 232px;
+    bottom: 40px;
+
+    @media (max-width: 1100px) {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.overflow-x {
+    @media (max-width: 1100px) {
+        overflow-x: auto;
+        position: absolute;
+        display: flex;
+        width: 100%;
+        overflow-y: hidden;
+    }
+    
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+
+  ::-webkit-scrollbar-thumb {
+    background: #646464;
+  }
+  
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8c8c8c;
+  }
+
+
+  .addPlayer {
+    animation: focusAddBtn 2s;
+    animation-iteration-count: 2;
+  }
+
+  @keyframes focusAddBtn {
+    0% {
+        scale: 1
+    }
+    50% {
+        scale: 2;
+    }
+    100% {
+        scale: 1;
+    }
+  }
+
+  .d-none {
+    display: none !important;
+  }
+
+  .gameOverImg {
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
+}
+
+.gameOver {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.gameOverBtnRow {
+    width: 65%;
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,37 @@
+.player {
+    height: 70px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background-color: rgb(178, 178, 178);
+    border-bottom-left-radius: 75px;
+    border-top-left-radius: 75px;
+    cursor: pointer;
+
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+
+    img {
+        height: 70px;
+        width: 70px;
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: top;
+        background-color: white;
+    }
+
+    span {
+        margin-left: 24px;
+        font-size: 24px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+.player-active {
+    background-color: orange;
+}

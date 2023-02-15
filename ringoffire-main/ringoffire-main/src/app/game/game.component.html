@@ -1,0 +1,51 @@
+<app-player *ngFor="let player of game.players; let i = index" [ngStyle]="{'top.px': 10 + (i * 90)}"
+    class="avater-position hide-mobile" [img]="game.playerAvatar[i]" [name]="player"
+    [playerActive]="i == game.currentPlayer" (click)="editPlayer(i)"
+    [ngClass]="{'d-none': game.players.length > 6}"></app-player>
+
+<div class="overflow-x">
+    <app-player-mobile *ngFor="let player of game.players; let i = index"
+        [ngStyle]="{'left.px': 20 + (i * 110), 'top.px': 0}" class="avater-position hide-desktop"
+        [img]="game.playerAvatar[i]" [name]="player" [playerActive]="i == game.currentPlayer" (click)="editPlayer(i)"
+        [ngClass]="{'hide-desktop': game.players.length <= 6}"></app-player-mobile>
+</div>
+
+<div class="gameOver" [ngClass]="{'d-none': !gameOver}">
+    <img src="../../assets/img/game_over.png" alt="" class="gameOverImg">
+
+    <div mat-dialog-actions class="gameOverBtnRow ">
+        <button mat-raised-button color="primary" (click)="restartGame()" cdkFocusInitial >Restart Game</button>
+        <button mat-raised-button color="accent" (click)="routeToStart()" cdkFocusInitial [ngStyle]="{'margin-left.px': 20}">New Game</button>
+    </div>
+</div>
+
+
+<div class="field">
+    <div class="card-stack">
+        <!-- Stack of unplayed Cards-->
+        <img *ngFor="let c of game.unplayedCards; let i = index" [ngStyle]="{'right.px':i * 3, 'top.px':i * 2}"
+            src="../../assets/img/cards/card_cover.png" alt="">
+
+        <!-- Top Card of the Stack-->
+        <img (click)="pickCard()" class="top-card" [class.d-none]="lastCard" [ngStyle]="{'right.px': 12, 'top.px': 8}"
+            src="../../assets/img/cards/card_cover.png" alt="">
+
+        <!-- Stack of played Cards-->
+        <img *ngFor="let cards of game.playedCards;" class="played-cards" src="../../assets/img/cards/{{ cards }}.png"
+            alt="">
+
+        <!-- Current card Desktop(Animation)-->
+        <img *ngIf="game.pickCardAnimation" class="pick-card hide-mobile-350px"
+            [ngStyle]="{'right.px': 210, 'top.px': 8}" src="../../assets/img/cards/{{ game.currentCard }}.png" alt="">
+
+        <!-- Current card Mobile(Animation)-->
+        <img *ngIf="game.pickCardAnimation" class="pick-card hide-desktop-350px"
+            [ngStyle]="{'right.px': 90, 'top.px': 8}" src="../../assets/img/cards/{{ game.currentCard }}.png" alt="">
+    </div>
+</div>
+
+<app-game-info [card]="game.currentCard" class="info-box"></app-game-info>
+
+<button mat-fab color="primary" class="btn-add" [class.addPlayer]="showAddPlayer" (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+</button>
