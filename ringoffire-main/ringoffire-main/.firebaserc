@@ -1,14 +1,15 @@
 {
+  "projects": {
+    "default": "ring-of-fire-e3903"
+  },
   "targets": {
-    "ringoffirerh": {
+    "ring-of-fire-e3903": {
       "hosting": {
         "ringoffire": [
-          "ringoffirerh"
+          "ring-of-fire-e3903"
         ]
       }
     }
   },
-  "projects": {
-    "default": "ringoffirerh"
-  }
+  "etags": {}
 }

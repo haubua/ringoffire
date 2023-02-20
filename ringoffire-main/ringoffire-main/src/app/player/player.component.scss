@@ -8,7 +8,8 @@
     border-bottom-left-radius: 75px;
     border-top-left-radius: 75px;
     cursor: pointer;
-
+    z-index: 10;
+    position: relative;
 
     &:hover {
         filter: brightness(1.1);

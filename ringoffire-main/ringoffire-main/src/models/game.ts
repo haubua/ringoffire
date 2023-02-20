@@ -9,7 +9,7 @@ export class Game {
     public playerAvatar: string[] = [];
     
     constructor() {
-        for (let i = 1; i < 2; i++) {
+        for (let i = 1; i < 13; i++) {
             this.stack.push('spade_' + i)
             this.stack.push('hearts_' + i)
             this.stack.push('clubs_' + i)

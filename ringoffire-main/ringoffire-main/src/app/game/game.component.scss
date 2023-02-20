@@ -52,7 +52,7 @@
         transform: translateX(215px) translateY(-167px) rotate(-5deg);
     }
     @media (max-width: 850px) {
-        transform: translateX(-240px) translateY(-167px) rotate(-5deg); //ANPASSEN 1
+        transform: translateX(-240px) translateY(-167px) rotate(-5deg);
     }
     @media (max-width: 550px) {
         right: 110px;
@@ -64,7 +64,7 @@
     animation: pick-card-animation 1.15s ease-in-out;
     transform: translateX(400px) translateY(-300px) rotate(-5deg);
 
-    @media (max-width: 850px) { //ANPASSEN
+    @media (max-width: 850px) { 
         animation: pick-card-animation-mobile850 1.15s ease-in-out;
         transform: translateX(90px) translateY(-300px) rotate(-5deg);
     }
@@ -174,15 +174,15 @@
 
 
 .overflow-x {
-    @media (max-width: 1100px) {
         overflow-x: auto;
         position: absolute;
         display: flex;
         width: 100%;
         overflow-y: hidden;
-    }
-    
+        height: 155px;
+        z-index: 0;
 }
+
 
 ::-webkit-scrollbar {
     width: 10px;

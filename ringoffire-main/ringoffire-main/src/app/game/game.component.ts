@@ -94,7 +94,7 @@ export class GameComponent implements OnInit {
   }
 
   restartGameCards() {
-    for (let i = 1; i < 2; i++) {
+    for (let i = 1; i < 13; i++) {
       this.game.stack.push('spade_' + i)
       this.game.stack.push('hearts_' + i)
       this.game.stack.push('clubs_' + i)
