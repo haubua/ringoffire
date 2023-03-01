@@ -7,11 +7,13 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./dialog-edit-player.component.scss']
 })
 export class DialogEditPlayerComponent {
-  name: string = '';
-  playerImg = ['avatar.png', 'male.png', 'smiley.webp', 'woman.webp', 'woman2.webp', 'penguin.webp']
 
   constructor(private dialogRef: MatDialogRef<DialogEditPlayerComponent>) {
   }
+  
+  name: string = '';
+  playerImg = ['avatar.png', 'male.png', 'smiley.webp', 'woman.webp', 'woman2.webp', 'penguin.webp']
+
   
   onNoClick() {
     this.dialogRef.close();

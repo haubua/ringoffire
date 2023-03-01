@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/models/game';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
@@ -12,6 +12,9 @@ import { DialogEditPlayerComponent } from '../dialog-edit-player/dialog-edit-pla
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
+  
+  constructor(private route: ActivatedRoute, public dialog: MatDialog, private firestore: AngularFirestore, private router: Router) { }
+
   playedCards: string[] = [];
   public game: Game;
   gameId: string = '';
@@ -19,8 +22,6 @@ export class GameComponent implements OnInit {
   gameOver: boolean = false;
   lastCard:boolean = false;
 
-
-  constructor(private route: ActivatedRoute, public dialog: MatDialog, private firestore: AngularFirestore, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -129,7 +130,6 @@ export class GameComponent implements OnInit {
 
   editPlayer(playerId): void {
     const dialogRef = this.dialog.open(DialogEditPlayerComponent);
-    console.log(playerId)
     dialogRef.afterClosed().subscribe(change => {
       if (change) {
         if (change == 'Delete') {

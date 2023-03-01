@@ -8,13 +8,15 @@ import { Game } from 'src/models/game';
   styleUrls: ['./dialog-add-player.component.scss']
 })
 export class DialogAddPlayerComponent {
+
+  constructor(private dialogRef: MatDialogRef<DialogAddPlayerComponent>) {
+  }
   name: string = '';
   
   game: Game;
   public selectedImg = '';
 
-  constructor(private dialogRef: MatDialogRef<DialogAddPlayerComponent>) {
-  }
+  
 
   onNoClick() {
     this.dialogRef.close();
